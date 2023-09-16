@@ -86,9 +86,11 @@ const BlogDetailPage = () => {
                   {timeSince(new Date(post.last_updated))} ago
                 </Typography>
               </Box>
-              <Button sx={{ color: "red" }} onClick={handlePostDelete}>
-                Delete Post
-              </Button>
+              {post.author === user.user.id && (
+                <Button sx={{ color: "red" }} onClick={handlePostDelete}>
+                  Delete Post
+                </Button>
+              )}
             </BlogTitleContainer>
 
             {post.pic ? (
